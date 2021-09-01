@@ -77,14 +77,14 @@ void loop() {
   digitalWrite(6, LOW);
   delay(59);
   
-  digitalWrite(3, HIGH); // (D)
+  digitalWrite(3, HIGH); // (C)
   delay(87.5);
   digitalWrite(3, LOW);
   delay(59);
 
-  digitalWrite(4, HIGH); // (D)
+  digitalWrite(3, HIGH); // (C)
   delay(87.5);
-  digitalWrite(4, LOW);
+  digitalWrite(3, LOW);
   delay(59);
   
   digitalWrite(8, HIGH); // (D^2)
@@ -130,14 +130,14 @@ void loop() {
   digitalWrite(6, LOW);
   delay(59);
   
-  digitalWrite(2, HIGH); // (D)
+  digitalWrite(2, HIGH); // (B)
   delay(87.5);
   digitalWrite(2, LOW);
   delay(59);
 
-  digitalWrite(4, HIGH); // (D)
+  digitalWrite(2, HIGH); // (B)
   delay(87.5);
-  digitalWrite(4, LOW);
+  digitalWrite(2, LOW);
   delay(59);
   
   digitalWrite(8, HIGH); // (D^2)
@@ -183,14 +183,14 @@ void loop() {
   digitalWrite(6, LOW);
   delay(59);
   
-  digitalWrite(1, HIGH); // (D)
+  digitalWrite(1, HIGH); // (A) bass
   delay(87.5);
   digitalWrite(1, LOW);
   delay(59);
 
-  digitalWrite(4, HIGH); // (D)
+  digitalWrite(1, HIGH); // (A) bass
   delay(87.5);
-  digitalWrite(4, LOW);
+  digitalWrite(1, LOW);
   delay(59);
   
   digitalWrite(8, HIGH); // (D^2)
