@@ -6,7 +6,6 @@
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(1, OUTPUT); // (A) [lower octave]
   pinMode(2, OUTPUT); // (B)
   pinMode(3, OUTPUT); // (C)
@@ -28,6 +27,165 @@ void loop() {
   digitalWrite(4, HIGH); // (D)
   delay(87.5);
   digitalWrite(4, LOW);
+  delay(59);
+
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(8, HIGH); // (D^2)
+  delay(87.5);
+  digitalWrite(8, LOW);
+  delay(116);
+  
+  digitalWrite(7, HIGH); // (A)
+  delay(87.5);
+  digitalWrite(7, LOW);
+  delay(190);
+  
+  digitalWrite(5, HIGH); // (G#) SLIDE BLOCK
+  delay(43.75);
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  delay(43.75);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(247.25);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(87.5);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(59);
+  
+  digitalWrite(3, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(3, LOW);
+  delay(59);
+
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(8, HIGH); // (D^2)
+  delay(87.5);
+  digitalWrite(8, LOW);
+  delay(116);
+  
+  digitalWrite(7, HIGH); // (A)
+  delay(87.5);
+  digitalWrite(7, LOW);
+  delay(190);
+  
+  digitalWrite(5, HIGH); // (G#) SLIDE BLOCK
+  delay(43.75);
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  delay(43.75);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(247.25);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(87.5);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(59);
+  
+  digitalWrite(2, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(2, LOW);
+  delay(59);
+
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(8, HIGH); // (D^2)
+  delay(87.5);
+  digitalWrite(8, LOW);
+  delay(116);
+  
+  digitalWrite(7, HIGH); // (A)
+  delay(87.5);
+  digitalWrite(7, LOW);
+  delay(190);
+  
+  digitalWrite(5, HIGH); // (G#) SLIDE BLOCK
+  delay(43.75);
+  digitalWrite(5, LOW);
+  digitalWrite(6, HIGH);
+  delay(43.75);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(116);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(247.25);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(4, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(4, LOW);
+  delay(59);
+  
+  digitalWrite(5, HIGH); // (F)
+  delay(87.5);
+  digitalWrite(5, LOW);
+  delay(59);
+  
+  digitalWrite(6, HIGH); // (G)
+  delay(87.5);
+  digitalWrite(6, LOW);
+  delay(59);
+  
+  digitalWrite(1, HIGH); // (D)
+  delay(87.5);
+  digitalWrite(1, LOW);
   delay(59);
 
   digitalWrite(4, HIGH); // (D)
