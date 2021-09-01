@@ -2,6 +2,7 @@
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
@@ -9,7 +10,6 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
 }
 
 // the loop function runs over and over again forever
@@ -22,6 +22,7 @@ void loop() {
 
 void turnOn(){
   digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(1, HIGH);
   digitalWrite(2, HIGH);
   digitalWrite(3, HIGH);
   digitalWrite(4, HIGH);
@@ -29,11 +30,11 @@ void turnOn(){
   digitalWrite(6, HIGH);
   digitalWrite(7, HIGH);
   digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
 }
 
 void turnOff(){
   digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(1, LOW);
   digitalWrite(2, LOW);
   digitalWrite(3, LOW);
   digitalWrite(4, LOW);
@@ -41,5 +42,4 @@ void turnOff(){
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
   digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
 }
