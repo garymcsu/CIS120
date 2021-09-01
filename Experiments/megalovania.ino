@@ -28,17 +28,17 @@ void loop() {
   digitalWrite(4, HIGH); // (D)
   delay(87.5);
   digitalWrite(4, LOW);
-  delay(45);
+  delay(59);
 
   digitalWrite(4, HIGH); // (D)
   delay(87.5);
   digitalWrite(4, LOW);
-  delay(45);
+  delay(59);
   
   digitalWrite(8, HIGH); // (D^2)
   delay(87.5);
   digitalWrite(8, LOW);
-  delay(90);
+  delay(116);
   
   digitalWrite(7, HIGH); // (A)
   delay(87.5);
@@ -51,32 +51,32 @@ void loop() {
   digitalWrite(6, HIGH);
   delay(43.75);
   digitalWrite(6, LOW);
-  delay(90);
+  delay(116);
   
   digitalWrite(6, HIGH); // (G)
   delay(87.5);
   digitalWrite(6, LOW);
-  delay(90);
+  delay(116);
   
   digitalWrite(5, HIGH); // (F)
   delay(247.25);
   digitalWrite(5, LOW);
-  delay(45);
+  delay(59);
   
   digitalWrite(4, HIGH); // (D)
   delay(87.5);
   digitalWrite(4, LOW);
-  delay(45);
+  delay(59);
   
   digitalWrite(5, HIGH); // (F)
   delay(87.5);
   digitalWrite(5, LOW);
-  delay(45);
+  delay(59);
   
   digitalWrite(6, HIGH); // (G)
   delay(87.5);
   digitalWrite(6, LOW);
-  delay(45);
+  delay(59);
   
 }
 
