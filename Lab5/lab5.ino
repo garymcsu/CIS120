@@ -12,6 +12,10 @@ const int buzzerPin = 40;
 const int joystickSel = 5;
 const int joystickX = 2;
 const int joysticky = 26;
+// these will change
+int joystickSelState = 0;
+int joystickXState, joystickYState;
+
 
 void setup(){
   pinMode(joystickSel, INPUT_PULLUP);
@@ -21,7 +25,12 @@ void setup(){
 void loop(){
   // read the analog value of Y axis
   joystickYState = analogRead(joystickY);
-  // TODO map Y axis input range [0,4096] to the note range (unknown);
+  // Map Y axis input range [0,4096] to the note range;
+  // For now I've chosen to place the note range between 200 and 800
+  joystickYState = map(joystickYState, 0, 4096, 200, 800)
+  if(joystickYState != 0){
+    beep(joystickYState, 50);
+  }
 }
 
 void beep(int note, int duration){
