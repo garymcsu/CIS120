@@ -1,23 +1,27 @@
 // Buzzer Pin = 40
-// Joystick vars:
-// #define joystickX 2
-// #define joystickY 26
+// Joystick select pin = 5
+// Joystick X-axis analog = 2
+// Joystick Y-axis analog = 26
 // uint16_t x, y, x00, y00;
 // uint16_t colour;
 // uint32_t z;
 
-int buzzerPin = 40;
+const int buzzerPin = 40;
+
+// Joystick vars
+const int joystickSel = 5;
+const int joystickX = 2;
+const int joysticky = 26;
 
 void setup(){
+  pinMode(joystickSel, INPUT_PULLUP);
   pinMode(buzzerPin,OUTPUT);  
 }
 
 void loop(){
-  for(int i = 0; i < 440; i++){
-    beep(i, 50);
-    }
-//  beep(440, 500);
-//  delay(2000);  
+  // read the analog value of Y axis
+  joystickYState = analogRead(joystickY);
+  // TODO map Y axis input range [0,4096] to the note range (unknown);
 }
 
 void beep(int note, int duration){
