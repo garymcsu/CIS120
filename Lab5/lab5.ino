@@ -15,7 +15,6 @@ void setup(){
 void loop(){
   for(int i = 0; i < 440; i++){
     beep(i, 50);
-    delay(50);
     }
 //  beep(440, 500);
 //  delay(2000);  
