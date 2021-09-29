@@ -27,7 +27,7 @@ void loop(){
   joystickYState = analogRead(joystickY);
   // Map Y axis input range [0,4096] to the note range;
   // For now I've chosen to place the note range between 200 and 800
-  joystickYState = map(joystickYState, 0, 4096, 200, 800)
+  joystickYState = map(joystickYState, 0, 4096, 200, 800);
   if(joystickYState != 0){
     beep(joystickYState, 50);
   }
