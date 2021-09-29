@@ -11,9 +11,14 @@ int buzzerPin = 40;
 void setup(){
   pinMode(buzzerPin,OUTPUT);  
 }
+
 void loop(){
-  beep(440, 500);
-  delay(2000);  
+  for(int i = 0; i < 440; i++){
+    beep(i, 50);
+    delay(50);
+    }
+//  beep(440, 500);
+//  delay(2000);  
 }
 
 void beep(int note, int duration){
