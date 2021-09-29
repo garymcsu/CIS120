@@ -46,10 +46,10 @@ void loop(){
   // For now I've chosen to place the note range between 200 and 800
   joystickYState = map(joystickYState, 0, 4096, 200, 800);
   // Display Y axis input on LCD screen
-  myScreen.gText(0, myScreen.screenSizeY()-myScreen.fontSizeY(), "y="+joystickYState, 10,1,6);
-  if(joystickYState != 0){
-    beep(joystickYState, 50);
-  }
+  myScreen.gText(0, myScreen.screenSizeY()-myScreen.fontSizeY(), "Hello There");
+//  if(joystickYState != 0){
+//    beep(joystickYState, 50);
+//  }
 }
 
 void beep(int note, int duration){
