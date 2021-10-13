@@ -11,7 +11,7 @@ const int buzzerPin = 40;
 // Joystick vars
 const int joystickSel = 5;
 const int joystickX = 2;
-const int joystickY = 26;
+const int joystickY = 26; 
 // these will change
 int joystickSelState = 0;
 int joystickXState, joystickYState;
