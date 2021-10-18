@@ -6,8 +6,7 @@ const int ledBlue =  37;
 
 int buttonOneState = 0;         // variable for reading the pushbutton #1 status
 int buttonTwoState = 0;
-
-int currentNumber = 0;
+int currentNumber = 0; 
 
 //screen lol
 #include <SPI.h>
@@ -21,7 +20,6 @@ int currentNumber = 0;
 #include <Terminal8e.h>
 Screen_HX8353E myScreen;
 
-
 void setup() {
   pinMode(ledGreen, OUTPUT);
   pinMode(ledBlue, OUTPUT);
@@ -33,9 +31,12 @@ void setup() {
 myScreen.dRectangle(10,10,108,108, whiteColour);
 }
    
-
 void loop() {
   // put your main code here, to run repeatedly:
+
+  // text
+  myScreen.gText (30, 50, i32toa(currentNumber), whiteColour, blackColour, 5, 5);
+
   buttonOneState = digitalRead(buttonOne);
 
   if (buttonOneState == LOW) {
@@ -57,6 +58,7 @@ void loop() {
   }
 }
 
+//increment
 void increment() {
   if (currentNumber < 100) {
     if (currentNumber == 99) {
