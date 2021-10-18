@@ -9,13 +9,30 @@ int buttonTwoState = 0;
 
 int currentNumber = 0;
 
+//screen lol
+#include <SPI.h>
+
+#include <LCD_screen.h>
+#include <LCD_screen_font.h>
+#include <LCD_utilities.h>
+#include <Screen_HX8353E.h>
+#include <Terminal12e.h>
+#include <Terminal6e.h>
+#include <Terminal8e.h>
+Screen_HX8353E myScreen;
+
+
 void setup() {
   pinMode(ledGreen, OUTPUT);
   pinMode(ledBlue, OUTPUT);
   // put your setup code here, to run once:
   pinMode(buttonOne, INPUT_PULLUP);
   pinMode(buttonTwo, INPUT_PULLUP);
+  myScreen.begin();
+  // box
+myScreen.dRectangle(10,10,108,108, whiteColour);
 }
+   
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -55,7 +72,7 @@ void decrement() {
     if (currentNumber == 0) {
       currentNumber = 99;
     } else {
-      currentNumber--
+      currentNumber--;
     }
   }
 }
