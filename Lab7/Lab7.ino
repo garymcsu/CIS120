@@ -30,6 +30,7 @@ void setup() {
   myScreen.dRectangle(10,10,108,108, whiteColour);
 
 }
+
 void loop() {
   // text
   myScreen.gText (30, 50, i32toa(currentNumber), whiteColour, blackColour, 5, 5);
