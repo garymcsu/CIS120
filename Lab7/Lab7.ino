@@ -38,6 +38,7 @@ void loop() {
   // button input
   buttonOneState = digitalRead(buttonOne);
   if (buttonOneState == LOW) {
+    delay(100);
     increment();
     digitalWrite(ledGreen, HIGH);
   }
@@ -47,6 +48,7 @@ void loop() {
 
   buttonTwoState = digitalRead(buttonTwo);
   if (buttonTwoState == LOW) {
+    delay(100);
     decrement();
     digitalWrite(ledBlue, HIGH);
   }
