@@ -25,6 +25,7 @@ void setup() {
   pinMode(ledBlue, OUTPUT);
   pinMode(buttonOne, INPUT_PULLUP);
   pinMode(buttonTwo, INPUT_PULLUP);
+  
   // box
   myScreen.begin();
   myScreen.dRectangle(10,10,108,108, whiteColour);
@@ -74,7 +75,7 @@ void increment() {
   {
     currentNumber = 0;
   }
-
+}
 void decrement() {
   if (currentNumber >= 0 && currentNumber <= 99)
   {
@@ -91,3 +92,4 @@ void decrement() {
   {
     currentNumber = 0;
   }
+}
