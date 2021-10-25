@@ -1,5 +1,4 @@
 const int buttonOne = 8;     // the number of the pushbutton #1 pin
-const int buttonTwo = 8;     //    ''             pushbutton #2 pin
 
 int red = 2;
 int yellow = 3;
@@ -7,7 +6,6 @@ int green = 4;
 int a = 0;
 
 int buttonOneState = 0;         // variable for reading the pushbutton #1 status
-int buttonTwoState = 0;         //      ''                  pushbutton #2 status
 
 
 void setup() {
@@ -15,7 +13,6 @@ void setup() {
   pinMode(yellow, OUTPUT);
   pinMode(green, OUTPUT);
   }
-
 
 void loop(){
   buttonOneState = digitalRead(buttonOne);
@@ -27,12 +24,9 @@ void loop(){
     a = 0;
   }
 
-  Serial.println(currentNumber);
-}
-
     changeLights();
     delay(15000);
-}
+
 void changeLights(){
   if (a = 0) {
     // green off, yellow on for 3 seconds
@@ -58,4 +52,5 @@ void changeLights(){
     digitalWrite(yellow, HIGH);
     delay(3000);
     }
+}
 }
