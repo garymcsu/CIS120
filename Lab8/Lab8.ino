@@ -1,6 +1,7 @@
 int red = 2;
 int yellow = 3;
 int green = 4;
+int a = 0;
 void setup() {
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
@@ -9,6 +10,18 @@ void setup() {
 
 
 void loop(){
+  buttonOneState = digitalRead(buttonOne);
+  if (buttonOneState == LOW) {
+    delay(100);
+    a = 1;
+  }
+  else {
+    a = 0;
+  }
+
+  Serial.println(currentNumber);
+}
+
     changeLights();
     delay(15000);
 }
