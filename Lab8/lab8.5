@@ -1,0 +1,74 @@
+int red = 10;            // pretty much done, some delays are short so it is easier to test.
+int yellow = 11;
+int green = 12;
+int blue = 13;
+const int buttonPin = 9;
+// second set of lights
+
+int rred = 2;
+int yyellow = 3;
+int ggreen = 4;
+int bblue = 5;
+const int bbuttonPin =7;
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT); 
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+
+  pinMode(rred, OUTPUT);
+  pinMode(yyellow, OUTPUT);
+  pinMode(ggreen, OUTPUT);
+  pinMode(bblue, OUTPUT);
+  pinMode(bbuttonPin, INPUT_PULLUP);
+  }
+void loop(){
+    changeLights();
+    delay(3000); // transition from red to green
+}
+void changeLights(){
+  if ((digitalRead(buttonPin) == HIGH)) {
+    digitalWrite(blue, HIGH);
+    digitalWrite(rred, HIGH);
+    delay(15000); // left turn signal comes on 15 seconds before green light.
+  } else {
+  digitalWrite(blue, LOW);  }
+    digitalWrite(green, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, LOW);
+  digitalWrite(bblue, LOW);
+  digitalWrite(ggreen, LOW);
+  digitalWrite(yyellow, LOW);
+    digitalWrite(rred, HIGH);
+delay(5000); //                               green to yellow
+   digitalWrite(yellow, HIGH);
+  digitalWrite(green, LOW);
+  digitalWrite(blue, LOW);
+  digitalWrite(red, LOW);
+    delay(3000); //                               yellow to red
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  delay(3000); //                                       transition from red to green
+ if ((digitalRead(bbuttonPin) == HIGH)) {
+    digitalWrite(bblue, HIGH);
+    delay(15000);
+  } else {
+  digitalWrite(bblue, LOW);  }
+  digitalWrite(rred, LOW);
+   digitalWrite(ggreen, HIGH);
+  digitalWrite(yyellow, LOW);
+delay(5000);                          // green to yellow
+digitalWrite(blue, LOW);
+  digitalWrite(bblue, LOW);
+  digitalWrite(ggreen, LOW);
+  digitalWrite(yyellow, HIGH);
+  digitalWrite(rred, LOW);
+  delay(3000);    //                            yellow to red
+ digitalWrite(rred, HIGH);
+digitalWrite(yyellow, LOW);
+}
+
+
+
+      
