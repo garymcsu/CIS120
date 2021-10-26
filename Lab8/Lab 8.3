@@ -1,0 +1,47 @@
+int red = 2;
+int yellow = 3;
+int green = 4;
+int blue = 5;
+const int buttonPin = 8;
+int buttonOneState = 0;   
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+  buttonOneState =  digitalRead(buttonPin);
+  }
+
+//digitalRead(buttonOneState);
+void loop(){
+    changeLights();
+    delay(150); //15000
+}
+void changeLights(){
+   //(digitalRead(buttonPin) == HIGH) 
+   //if (digitalRead(buttonPin) == HIGH) {          //I changed the order so it wouldn't go red to yellow
+    // green off, yellow on for 3 seconds           // We now have to add another traffic light
+     digitalWrite(yellow, HIGH);                    // We can copy from the link in the lab, "Traffic Light with conjuction
+     delay(100);                                    //Then we will add another left turn signal and make sure all of out lights are in sync
+    digitalWrite(blue, LOW); // change to low
+    digitalWrite(green, LOW);
+    delay(300); // 3000
+    // turn off yellow, then turn red on for 5 seconds
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, HIGH);
+    delay(500); // 5000
+    // red and yellow on for 2 seconds (red is already on though)
+    //digitalWrite(yellow, HIGH);
+    delay(200); // 2000
+    // turn off red and yellow, then turn on green
+    //digitalWrite(yellow, LOW);
+    digitalWrite(red, LOW);
+    //if (buttonOneState == LOW) {        //buttonOneState would always enter loop for me.
+    if (digitalRead(buttonPin) == HIGH) { 
+      digitalWrite(blue, HIGH);
+      digitalWrite(green, HIGH);
+      delay(100) ;}
+    digitalWrite(green, HIGH);
+    delay(30); // 3000
+}
