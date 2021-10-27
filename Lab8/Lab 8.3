@@ -1,47 +1,81 @@
-int red = 2;
-int yellow = 3;
-int green = 4;
-int blue = 5;
-const int buttonPin = 8;
-int buttonOneState = 0;   
+/*$$$$$$$$\         $$$$$$\   $$$$$$\   $$$$$$\ $$$$$$\         
+\__$$  __|        $$  __$$ \ $$  __$$\ $$  __$$\ _$$  _|        
+   $$ |  $$$$$$\  $$ /  $$ | $$ /  \__|$$ /  \__ |$$ |  $$$$$$$\ 
+   $$ | $$  __$$\ $$$$$$$$ | $$$$\     $$$$\      $$ | $$  _____|
+   $$ | $$ |  \__|$$  __$$ | $$  _|    $$  _|     $$ | $$ /      
+   $$ | $$ |      $$ |  $$ | $$ |      $$ |       $$ | $$ |      
+   $$ | $$ |      $$ |  $$ | $$ |      $$ |     $$$$$$\ $$$$$$$\ 
+   \__| \__|      \__|  \__| \__|      \__|     \______\ _______*/
+                  //  [https://bit.ly/3mkfHUh] //                                     
+                                                             
+                                                             
+
+// second set of lights
+int red = 10;            // pretty much done, some delays are short so it is easier to test.
+int yellow = 11;
+int green = 12;
+int blue = 13;
+const int bbuttonPin =7;
+
+// second set of lights
+int rred = 2;
+int yyellow = 3;
+int ggreen = 4;
+int bblue = 5;
+const int buttonPin = 9;
+
+//------------
 void setup() {
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
   pinMode(green, OUTPUT);
   pinMode(blue, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP);
-  buttonOneState =  digitalRead(buttonPin);
-  }
-
-//digitalRead(buttonOneState);
-void loop(){
-    changeLights();
-    delay(150); //15000
+  pinMode(buttonOne, INPUT);
+  Serial.begin(115200);
+  buttonOneState = digitalRead(buttonOne);
 }
+
+void loop(){
+Serial.println(buttonOneState);
+buttonOneState = digitalRead(buttonOne);
+  changeLights();
+}
+
 void changeLights(){
-   //(digitalRead(buttonPin) == HIGH) 
-   //if (digitalRead(buttonPin) == HIGH) {          //I changed the order so it wouldn't go red to yellow
-    // green off, yellow on for 3 seconds           // We now have to add another traffic light
-     digitalWrite(yellow, HIGH);                    // We can copy from the link in the lab, "Traffic Light with conjuction
-     delay(100);                                    //Then we will add another left turn signal and make sure all of out lights are in sync
-    digitalWrite(blue, LOW); // change to low
+  if (buttonOneState == 0) {
+    // green off, yellow on for 3 seconds
     digitalWrite(green, LOW);
-    delay(300); // 3000
+    digitalWrite(yellow, HIGH);
+    delay(3000);
     // turn off yellow, then turn red on for 5 seconds
     digitalWrite(yellow, LOW);
     digitalWrite(red, HIGH);
-    delay(500); // 5000
-    // red and yellow on for 2 seconds (red is already on though)
-    //digitalWrite(yellow, HIGH);
-    delay(200); // 2000
-    // turn off red and yellow, then turn on green
-    //digitalWrite(yellow, LOW);
+    delay(5000);
+    // turn off red, then turn on green
     digitalWrite(red, LOW);
-    //if (buttonOneState == LOW) {        //buttonOneState would always enter loop for me.
-    if (digitalRead(buttonPin) == HIGH) { 
-      digitalWrite(blue, HIGH);
-      digitalWrite(green, HIGH);
-      delay(100) ;}
     digitalWrite(green, HIGH);
-    delay(30); // 3000
+    delay(3000);
+    }
+ else {
+  if (buttonOneState == 1) {
+    // green off, yellow on for 3 seconds
+    digitalWrite(green, LOW);
+    digitalWrite(yellow, HIGH);
+    delay(2800);
+    // turn off yellow, then turn red on for 5 seconds
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, HIGH);
+    delay(6000);
+    // turn off red and yellow, then turn on blue
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, LOW);
+    digitalWrite(blue, HIGH);
+    delay(3000);
+    // green on addition to blue, and turn blue off after 2-seconds leaving green on for 3s
+    digitalWrite(green, HIGH);
+    delay(2000);
+    digitalWrite(blue, LOW);
+    delay(3000);
+    }
+}
 }
