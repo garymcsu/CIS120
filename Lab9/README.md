@@ -32,7 +32,7 @@
       
    - ### Part 2 (Energia)
       - Convert code written for Arduino so that it runs on Energia. Simple enough, right? Requirements state to
-        create a screen object and a servo motor object and initialize both in your code. 
+        create a screen object and a servo motor object and initialize both in your code, linking the joystick to the screen object and the servo.
       
       - (Optional for testing) Idk lol think of something cool
       
