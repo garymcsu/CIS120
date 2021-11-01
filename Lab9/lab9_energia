@@ -1,19 +1,42 @@
-#include
+#include <Servo.h> 
+#include "SPI.h"
+#include "Screen_HX8353E.h"
+#include <SPI.h>
+#include <LCD_screen.h>
+#include <LCD_screen_font.h>
+#include <LCD_utilities.h>
+#include <Screen_HX8353E.h>
+#include <Terminal12e.h>
+#include <Terminal6e.h>
+#include <Terminal8e.h>
+Screen_HX8353E myScreen;
+
+
+#define joystickX 2
+#define joystickY 26
+uint16_t x, y, x00, y00;
+uint16_t colour;
+uint32_t z;
 
 Servo myservo;  // create servo object to control a servo
 
-int potpin = 2;  // analog pin used to connect the potentiometer
+
 int val;    // variable to read the value from the analog pin
 
 void setup()
 {
+  myScreen.begin();
+   analogReadResolution(12);
   myservo.attach(19);  // attaches the servo on pin 9 to the servo object
+  
 }
 
 void loop()
 {
-  val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
-  val = map(val, 0, 4096, 0, 179);     // scale it to use it with the servo (value between 0 and 180)
-  myservo.write(val);                  // sets the servo position according to the scaled value
-  delay(15);                           // waits for the servo to get there
+   x = map(analogRead(joystickX), 0, 4096, 20, 160);
+    if (x >= 100) 
+      myScreen.gText(30, 50, i32toa(x), whiteColour, blackColour, 5, 5); 
+    else
+     myScreen.gText(30, 50, "0" + i32toa(x), whiteColour, blackColour, 5, 5);  //If angle of servo is below 100 it will disdlay a zero infront.
+    myservo.write(x);    
 }
