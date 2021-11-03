@@ -27,4 +27,7 @@ void loop() {
     if(distance < 7){
       digitalWrite(LED, HIGH);
       }
+    else {
+      digitalWrite(LED, LOW);
+    }
 }
