@@ -1,7 +1,5 @@
 # Lab10
  ## Pins 
-   - Temp Sensor
-     - A0
    - LCD
      - 8-13
    - Buzzer
