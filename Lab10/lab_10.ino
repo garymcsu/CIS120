@@ -34,14 +34,14 @@ void loop() {
     }
     
     if (distance > 6.5) {
-    noTone(Buzzer);
+      noTone(Buzzer);
     }
     else {
-  tone(Buzzer, 100);
-  delay(100);
-  noTone(Buzzer);
-  delay(100);
-  }
+      tone(Buzzer, 100);
+      delay(100);
+      noTone(Buzzer);
+      delay(100);
+    }
   
-}
+  }
 }
