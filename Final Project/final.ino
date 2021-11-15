@@ -1,50 +1,59 @@
-#include <NewPing.h>
-#include <Servo.h> 
- 
-#define TRIGGER_PIN  2   // Arduino pin 2 tied to trigger pin on the ultrasonic sensor.
-#define ECHO_PIN     3   // Arduino pin 3 tied to echo pin on the ultrasonic sensor.
-#define MAX_DISTANCE 150 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
-#define SERVO_PWM_PIN 9 //set servo to Arduino's pin 9
- 
-// means -angle .. angle
-#define ANGLE_BOUNDS 80
-#define ANGLE_STEP 1
- 
-int angle = 0;
- 
-// direction of servo movement 
-// -1 = back, 1 = forward 
-int dir = 1;
- 
-Servo myservo;
-NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); 
- 
+#include <Servo.h>
+
+const int trigPin=8;
+const int echoPin=7;
+
+long duration;
+int distance;
+
+Servo s1;
+
 void setup() {
-  Serial.begin(9600); // initialize the serial port:
-  myservo.attach(SERVO_PWM_PIN); //set servo to Arduino's pin 9
+  
+  Serial.begin(9600);
+  pinMode(trigPin,OUTPUT);
+  pinMode(echoPin,INPUT);
+
+  s1.attach(9);
 }
- 
-void loop() {
- 
-  delay(50);
-  // we must renormalize to positive values, because angle is from -ANGLE_BOUNDS .. ANGLE_BOUNDS
-  // and servo value must be positive
-  myservo.write(angle + ANGLE_BOUNDS);
-  
-  // read distance from sensor and send to serial
-  getDistanceAndSend2Serial(angle);
-  
-  // calculate angle 
-  if (angle >= ANGLE_BOUNDS || angle <= -ANGLE_BOUNDS) {
-    dir = -dir;
-  }
-  angle += (dir * ANGLE_STEP);  
+
+void loop()
+{
+    for(int i=0;i<=180;i++){            // rotates the servo motor from 15 to 165 degrees
+    s1.write(i);
+    delay(30);
+    distance = calDist();
+
+    Serial.print(i);                      // Sends the current degree into the Serial Port
+    Serial.print(",");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print(distance);                // Sends the distance value into the Serial Port
+    Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+      }
+
+    for(int i=180;i>0;i--){  
+    s1.write(i);
+    delay(30);
+    distance = calDist();
+    Serial.print(i);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.print(".");
+    }
+
 }
- 
-int getDistanceAndSend2Serial(int angle) {
-  int cm = sonar.ping_cm();
-  Serial.print(angle, DEC);
-  Serial.print(",");
-  Serial.println(cm, DEC);
-  
+
+int calDist()
+{
+   digitalWrite(trigPin, LOW);
+   delayMicroseconds(2);
+                                                                // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW); 
+                                                              // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH);
+                                                              // Calculating the distance
+  distance= duration*0.034/2;                                // Range : 2cm to 400 cm
+
+  return distance;
 }
