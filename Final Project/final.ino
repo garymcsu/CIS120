@@ -2,6 +2,7 @@
 
 const int trigPin=8;
 const int echoPin=7;
+const int buzzpin=3;
 
 long duration;
 int distance;
@@ -11,6 +12,7 @@ Servo s1;
 void setup() {
   
   Serial.begin(9600);
+  pinMode(buzzpin, OUTPUT);
   pinMode(trigPin,OUTPUT);
   pinMode(echoPin,INPUT);
 
@@ -41,6 +43,7 @@ void loop()
     }
 
 }
+
 
 int calDist()
 {
