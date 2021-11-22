@@ -42,6 +42,14 @@ void loop()
     Serial.print(".");
     }
 
+        if(distance < 16.51){
+      tone(Buzzer, 1865);
+      delay(25);
+      noTone(Buzzer);
+    }
+    else {
+      noTone(Buzzer);
+    }
 }
 
 
