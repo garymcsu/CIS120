@@ -16,6 +16,16 @@ void setup() {
   pinMode(trigPin,OUTPUT);
   pinMode(echoPin,INPUT);
 
+  if(distance < 16.51){
+    tone(buzzpin, 1865);
+    delay(95);
+    noTone(buzzpin);
+    delay(25);
+  }
+  else {
+    noTone(buzzpin);
+  }
+
   s1.attach(9);
 }
 
@@ -40,15 +50,6 @@ void loop()
     Serial.print(",");
     Serial.print(distance);
     Serial.print(".");
-    }
-
-        if(distance < 16.51){
-      tone(buzzpin, 1865);
-      delay(25);
-      noTone(buzzpin);
-    }
-    else {
-      noTone(buzzpin);
     }
 }
 
