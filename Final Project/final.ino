@@ -43,12 +43,12 @@ void loop()
     }
 
         if(distance < 16.51){
-      tone(Buzzer, 1865);
+      tone(buzzpin, 1865);
       delay(25);
-      noTone(Buzzer);
+      noTone(buzzpin);
     }
     else {
-      noTone(Buzzer);
+      noTone(buzzpin);
     }
 }
 
