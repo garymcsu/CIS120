@@ -30,24 +30,24 @@ void loop()
     Serial.print(",");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
     Serial.print(distance);                // Sends the distance value into the Serial Port
     Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-      }
-
-    for(int i=180;i>0;i--){  
-    s1.write(i);
-    delay(30);
-    distance = calDist();
-    Serial.print(i);
-    Serial.print(",");
-    Serial.print(distance);
-    Serial.print(".");
     }
 
-  while (distance < 16.51) {
+    for(int i=180;i>0;i--){  
+      s1.write(i);
+      delay(30);
+      distance = calDist();
+      Serial.print(i);
+      Serial.print(",");
+      Serial.print(distance);
+      Serial.print(".");
+    while (distance <= 16.51) {
       tone(buzzpin, 1865);
       delay(95);
       noTone(buzzpin);
       delay(25);
+    }  
   }
+}
 
 
 int calDist()
