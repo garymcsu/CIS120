@@ -16,16 +16,6 @@ void setup() {
   pinMode(trigPin,OUTPUT);
   pinMode(echoPin,INPUT);
 
-  if(distance < 16.51){
-    tone(buzzpin, 1865);
-    delay(95);
-    noTone(buzzpin);
-    delay(25);
-  }
-  else {
-    noTone(buzzpin);
-  }
-
   s1.attach(9);
 }
 
@@ -51,7 +41,13 @@ void loop()
     Serial.print(distance);
     Serial.print(".");
     }
-}
+
+  while (distance < 16.51) {
+      tone(buzzpin, 1865);
+      delay(95);
+      noTone(buzzpin);
+      delay(25);
+  }
 
 
 int calDist()
