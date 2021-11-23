@@ -31,8 +31,7 @@ void loop()
       Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
     if (distance <= 16.51) {
       tonetone(buzzpin, 932, 45)
-      delay(700);
-    }  
+      wait(500);
     else{
       noTone(buzzpin);
     }
@@ -48,8 +47,7 @@ void loop()
       Serial.print(".");
     if (distance <= 16.51) {
       tonetone(buzzpin, 932, 45)
-      delay(700);
-    }  
+      wait(500);
     else{
       noTone(buzzpin);
     }
