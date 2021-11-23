@@ -22,15 +22,24 @@ void setup() {
 void loop()
 {
     for(int i=0;i<=180;i++){            // rotates the servo motor from 15 to 165 degrees
-    s1.write(i);
-    delay(30);
-    distance = calDist();
+      s1.write(i);
+      delay(30);
+      distance = calDist();
 
-    Serial.print(i);                      // Sends the current degree into the Serial Port
-    Serial.print(",");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-    Serial.print(distance);                // Sends the distance value into the Serial Port
-    Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+      Serial.print(i);                      // Sends the current degree into the Serial Port
+      Serial.print(",");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+      Serial.print(distance);                // Sends the distance value into the Serial Port
+      Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    if (distance <= 16.51) {
+      tone(buzzpin, 1865);
+      delay(25);
+      noTone(buzzpin);
+      delay(100);
+    }  
+    else{
+      noTone(buzzpin);
     }
+  }
 
     for(int i=180;i>0;i--){  
       s1.write(i);
@@ -42,11 +51,12 @@ void loop()
       Serial.print(".");
     if (distance <= 16.51) {
       tone(buzzpin, 1865);
-      delay(95);
-      noTone(buzzpin);;
+      delay(25);
+      noTone(buzzpin);
+      delay(100);
     }  
     else{
-      noTone(buzzpin)
+      noTone(buzzpin);
     }
   }
 }
