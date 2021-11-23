@@ -30,8 +30,8 @@ void loop()
       Serial.print(distance);                // Sends the distance value into the Serial Port
       Serial.print(".");                   // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
     if (distance <= 16.51) {
-      tonetone(buzzpin, 932, 45)
-      wait(500);
+      tone(buzzpin, 932, 45);
+      millis(500);
     else{
       noTone(buzzpin);
     }
@@ -46,8 +46,8 @@ void loop()
       Serial.print(distance);
       Serial.print(".");
     if (distance <= 16.51) {
-      tonetone(buzzpin, 932, 45)
-      wait(500);
+      tone(buzzpin, 932, 45);
+      millis(500);
     else{
       noTone(buzzpin);
     }
